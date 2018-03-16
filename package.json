@@ -1,0 +1,21 @@
+{
+  "name": "callbag-to-mobx",
+  "version": "1.0.0",
+  "description": "Expose a listenable callbag source as a mobx observable",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/racido/callbag-to-mobx.git"
+  },
+  "main": "readme.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "Sjoerd de Jong",
+  "license": "MIT",
+  "keywords": ["callbag", "mobx"],
+  "devDependencies": {
+    "mobx": "^4.1.0",
+    "mobx-utils": "^4.0.0",
+    "tape": "^4.8.0"
+  }
+}
