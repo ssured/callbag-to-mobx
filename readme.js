@@ -9,18 +9,19 @@
  * Example:
  *
  * ```
- *   const { interval } = require('callbag-basics');
- *   const { asObservable, fromExpression } = require('callbag-to-mobx');
+ *   const { interval, pipe, forEach } = require("callbag-basics");
+ *   const { asObservable, fromExpression } = require("callbag-to-mobx");
+ *   const { autorun } = require("mobx");
  *
  *   // from callbag to mobx
- *   const value = asObservable(interval(1000), -1)
+ *   const value = asObservable(interval(1000), -1);
  *
- *   autorun(() => console.log(value.current())); // -1, 0, 1, 2, 3
+ *   autorun(() => console.log("mobx", value.current())); // -1, 0, 1, 2, 3
  *
  *   // from mobx to callbag
  *   pipe(
  *     fromExpression(() => value.current()),
- *     forEach(value => console.log(value)) // -1, 0, 1, 2, 3
+ *     forEach(value => console.log("foreach", value)) // -1, 0, 1, 2, 3
  *   );
  * ```
  *
